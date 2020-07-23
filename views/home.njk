@@ -1,0 +1,40 @@
+{% extends "layout.njk"%}
+
+{% block head %}
+    <title>Foodfy</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <section class="wrapper">
+
+            <div class="description-container">
+                <h1>As melhores Receitas</h1> 
+                <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
+            </div>
+            <div class="image_description-container">
+                <img src="chef.png" alt="chef image">
+            </div>
+        </section>
+        
+        <div class = "title_accessed">
+            <h1>Mais acessadas</h1>
+        </div>
+
+        <section class="cards">
+            {%for item in items%}
+                <div class="card" id= "{{item.index}}">
+                    <div class="card_image-container">
+                        <img src="{{item.image}}" alt="burger" class="card_image">
+                    </div>
+                    <a>{{item.title}}</a>
+                    <p>{{item.author}}</p>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+
+    <script src="/scripts.js"></script>
+
+{% endblock %}       

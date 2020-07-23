@@ -1,0 +1,72 @@
+{% extends "admin/admLayout.njk" %}
+
+{% block head %}
+    <title>{{recipe.title}} | Foodfy</title>
+{% endblock%}
+
+{% block content %}
+
+    <div class="container">
+        
+        <form action="">
+
+            <div class="title-page">
+                <section>
+                    <h1>Receita: {{recipe.title}}</h1>
+                </section>
+                <section>
+                    <a href="/admin/recipes/{{recipe.index}}/edit">Editar Receita</a>
+                </section>
+            </div>
+
+            <div class="image_recipe-container">
+                <img src="{{recipe.image}}" alt="{{recipe.title}}">
+            </div>
+            
+            <div class="title_author">
+                <h1>{{recipe.title}}</h1>
+                <p>por {{recipe.author}}</p>
+            </div> 
+
+            <div class="ingredients">
+                <section class="topic_button" id="ingredients">
+                    <h1>Ingredientes</h1>
+                </section>
+                <div class="topic_content_ingredients">
+                    <ul id ="content">
+                    {%for ingredient in recipe.ingredients%}
+                        <li>{{ingredient}}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="preparation">
+                <section class="topic_button" id="preparation">
+                    <h1>Modo de preparo</h1>
+                </section>
+                <div class="topic_content_preparation">
+                    <ul id ="content">
+                    {%for preparation_mode in recipe.preparations_mode%}
+                        <li>{{preparation_mode}}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="information">
+                <section class="topic_button" id="information">
+                    <h1>Informações adicionais</h1>
+                </section>
+                <div class="topic_content_information">
+                    <p>{{recipe.information}}</p>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    
+    <script src="/scripts.js"></script>
+
+{% endblock %}

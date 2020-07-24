@@ -1,0 +1,26 @@
+{% extends 'admin/admLayout.njk' %}
+
+{% block content %}
+
+<div class="container">
+
+    <form method="POST" action="/admin/chefs">
+
+        <div class="title-page">
+            <section>
+                <h1>Criando chef</h1>
+            </section>
+            <section>
+                <button type="submit" id="create">Salvar chef</button>
+            </section>
+        </div>
+
+        {%include 'admin/chefs/fields.njk'%}
+
+    </form>
+
+    <div class="scpace"></div>
+
+</div>
+
+{% endblock %}

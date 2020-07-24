@@ -3,7 +3,8 @@ const routes = express.Router()
 
 const data = require("./data.json")
 
-const recipes = require('./controllers/recipes')
+const recipes = require('./app/controllers/recipes')
+const chefs = require('./app/controllers/chefs')
 
 
 routes.get("/", function(req, res){
@@ -54,6 +55,13 @@ routes.get("/admin/recipes/:index/edit", recipes.edit)
 routes.post("/admin/recipes", recipes.post)
 routes.put("/admin/recipes", recipes.put)
 routes.delete("/admin/recipes", recipes.delete)
+
+
+routes.get("/admin/chefs/create", chefs.create)
+routes.get("/admin/chefs/:id", chefs.show)
+routes.get("/admin/chefs/:id/edit", chefs.edit)
+
+routes.post("/admin/chefs", chefs.post)
 
 
 

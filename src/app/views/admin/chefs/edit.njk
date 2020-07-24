@@ -4,7 +4,38 @@
 
 <div class="container">
 
-    {% include "admin/chefs/fields.njk"%}
+    <form id="form-delete" action="/admin/chefs?_method=DELETE" method="POST">
+        <input 
+            type="hidden"
+            name="id"
+            value="{{chef.id}}"
+        >
+        <button type="submit">Deletar</button>
+    </form>
+
+    <form method="POST" action="/admin/chefs?_method=PUT">
+
+        <div class="title-page">
+
+            <section>
+                <h1>Editando chef</h1>
+            </section>
+            
+            <section>
+                <button type="submit" id="create">Salvar chef</button>
+            </section>
+
+        </div>
+
+        {% include "admin/chefs/fields.njk"%}
+
+        <input 
+            type="hidden"
+            name="id"
+            value="{{chef.id}}">        
+    </form>
+
+    {% include '../formDelete.njk' %}
 
 </div>
 

@@ -5,6 +5,15 @@ const { put } = require('../controllers/recipes')
 const update = require('lodash.update')
 
 module.exports = {
+    all(callback) {
+        db.query(`
+            SELECT * FROM chefs 
+            ORDER BY name ASC`, function (err, results) {
+                if(err) throw `Database error ${err}`
+
+                callback(results.rows)
+            })
+    },
     create(data, callback) {
         const query = `
             INSERT INTO chefs (
@@ -37,7 +46,34 @@ module.exports = {
             }
         )
     },
-    update(callback){
-         
+    update(data, callback){
+        const query = `
+            UPDATE chefs SET
+                name = ($1),
+                avatar_url = ($2)
+            WHERE id = $3
+        ` 
+
+        const values = [
+            data.name,
+            data.avatar_url,
+            data.id
+        ]
+
+        db.query(query, values, function (err, results) {
+            if(err) throw `Database error ${err}`
+
+            callback()
+        })
+    },
+    delete(id, callback) {
+        db.query(`
+            DELETE FROM chefs
+            WHERE id = $1`, [id], function (err, results) {
+                if (err) throw `Database Error! ${err}`
+
+                return callback()
+            }
+        )
     }
 }

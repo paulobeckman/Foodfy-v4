@@ -525,9 +525,6 @@ input[name="preparations_mode"]{
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
-}
-
-.avatar-chef img{
     display: flex;
     margin: 0 auto;
 }
@@ -550,5 +547,31 @@ input[name="preparations_mode"]{
     font-size: 20px;
     color: #777777;
     text-align: center;
+}
+
+/* index chefs */
+.card_image-container .card_image-chef img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cards_chefs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.card_chef {
+    display: grid;
+    grid-template-columns: 65px 1fr;
+}
+
+.card_image-container.chef img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    box-sizing: border-box;
 }
 

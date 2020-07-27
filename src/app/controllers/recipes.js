@@ -1,5 +1,5 @@
-const fs = require('fs')
 const data = require("../../data.json")
+const Recipe = require('../models/Recipe')
 
 exports.index = function (req, res){
     
@@ -41,28 +41,10 @@ exports.post = function (req, res){
             return res.send('Please, fill all fields!')
         }
     }
-
-    const id = Number(data.recipes.length + 1)
-
-    let{image, title, author, ingredients, preparations_mode, information} = req.body
-
-    data.recipes.push({
-        id,
-        image, 
-        title, 
-        author,
-        ingredients, 
-        preparations_mode, 
-        information
+    
+    Recipe.create(req.body, function (recipe) {
+        return res.redirect(`recipes/{recipe.id}`)
     })
-
-    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
-        if(err) return res.rend("Write file error!")
-
-        return res.redirect("/admin/recipes")
-
-    })
-
 }
 
 

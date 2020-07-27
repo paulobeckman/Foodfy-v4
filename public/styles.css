@@ -435,7 +435,8 @@ h4{
 }
 
 .cards-recipes .card a:last-child,
-.page-create button{
+.page-create button,
+.card_chef a{
     font-weight: Bold;
     font-size: 14px;
     color: #6558C3;
@@ -573,5 +574,20 @@ input[name="preparations_mode"]{
     height: 65px;
     border-radius: 50%;
     box-sizing: border-box;
+}
+
+.card_chef .name_chef {
+    font-weight: regular;
+    font-size: 18px;
+    color: #111111;
+    margin-top: 8px
+}
+
+.card_chef a,
+.card_chef .name_chef {
+    margin-left:  20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 

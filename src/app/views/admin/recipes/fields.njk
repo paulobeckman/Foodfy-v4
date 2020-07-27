@@ -63,14 +63,14 @@
 
 <div id="preparations_mode" class="item">
     <div>modo de preparo</div>
-    {% if recipe.preparations_mode %}
-        {% for preparation_mode in recipe.preparations_mode %}
+    {% if recipe.preparations %}
+        {% for preparation in recipe.preparations %}
         <div class="preparation_mode">
             <input 
                 type="text" 
-                name="preparations_mode[]" 
+                name="preparations[]" 
                 placeholder="Modo de preparo" 
-                value="{{preparation_mode}}"
+                value="{{preparations}}"
             />
         </div>
         {% endfor %}
@@ -78,7 +78,7 @@
     <div class="preparation_mode">
         <input 
             type="text" 
-            name="preparations_mode[]" 
+            name="preparations[]" 
             placeholder="Modo de preparo" 
             value=""
         />

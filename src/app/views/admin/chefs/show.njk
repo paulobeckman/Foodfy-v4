@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container cards-recipes">
 
     <div class="title-page">
         <section>
@@ -21,6 +21,26 @@
         <p>colocar o total de recitas</p>
 
     </div>
+ 
+    <div class = "title_accessed">
+        <h1>Receitas</h1>
+    </div>
+
+    <section class="cards">
+            <div class="card">
+                <section>
+                    <div class="card_image-container">
+                        <img src="{{chef.recipes_image}}" alt="burger" class="card_image">
+                    </div>
+                </section>
+                
+                <section>
+                    <a>{{chef.recipes_title}}</a>
+                    <p>{{chef.name}}</p>
+                    <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                </section>
+            </div>
+    </section>
 
 </div>
 

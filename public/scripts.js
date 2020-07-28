@@ -49,7 +49,6 @@ for (let showHide of showHides){
     })
 }
 
-
 function addIngredient(){
     const ingredients = document.querySelector("#ingredients_create");
     const fieldContainer = document.querySelectorAll (".ingredient");

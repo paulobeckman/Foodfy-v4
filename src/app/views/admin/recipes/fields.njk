@@ -22,18 +22,6 @@
     </div>
 </div>
 
-<div class="item">
-    <div>Nome do Autor</div>
-    <div>
-        <input 
-            type="text"
-            name="author"
-            placeholder="Autor"
-            value="{{recipe.author}}"
-        >
-    </div>
-</div>
-
 <div id="ingredients_create" class="item">
     <div>Ingredientes</div>
     {% if recipe.ingredients %}
@@ -70,7 +58,7 @@
                 type="text" 
                 name="preparations[]" 
                 placeholder="Modo de preparo" 
-                value="{{preparations}}"
+                value="{{preparation}}"
             />
         </div>
         {% endfor %}

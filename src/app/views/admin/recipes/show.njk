@@ -13,7 +13,7 @@
                     <h1>Receita: {{recipe.title}}</h1>
                 </section>
                 <section>
-                    <a href="/admin/recipes/{{recipe.index}}/edit">Editar Receita</a>
+                    <a href="/admin/recipes/{{recipe.id}}/edit">Editar Receita</a>
                 </section>
             </div>
 
@@ -45,8 +45,8 @@
                 </section>
                 <div class="topic_content_preparation">
                     <ul id ="content">
-                    {%for preparation_mode in recipe.preparations_mode%}
-                        <li>{{preparation_mode}}</li>
+                    {%for preparation in recipe.preparations%}
+                        <li>{{preparation}}</li>
                     {% endfor %}
                     </ul>
                 </div>

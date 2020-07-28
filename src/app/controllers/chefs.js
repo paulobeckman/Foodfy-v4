@@ -1,5 +1,4 @@
 const Chef = require('../models/Chef')
-const { show, put } = require('./recipes')
 
 module.exports = {
     index(req, res) {
@@ -19,7 +18,7 @@ module.exports = {
             if (req.body[key] == "") {
                 return res.send('Please, fill all fields!')
             }
-        }
+        } 
 
         Chef.create(req.body, function (chef) {
             return res.redirect(`chefs/${chef.id}`)
@@ -27,7 +26,7 @@ module.exports = {
     },
 
     show(req, res) {
-        Chef.find(req.params.id, function name(chef) {
+        Chef.find(req.params.id, function (chef) {
             if(!chef) return res.send("Chef not found")
 
             return res.render("admin/chefs/show", { chef })
@@ -59,7 +58,7 @@ module.exports = {
 
     delete(req, res) {
         Chef.delete(req.body.id, function() {
-            return res.redirect(`/admin/chefs`)
+            return res.redirect ("/admin/chefs")
         })
     }
 } 

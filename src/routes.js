@@ -1,40 +1,38 @@
 const express = require('express')
 const routes = express.Router()
 
-const data = require("./data.json")
-
 const recipes = require('./app/controllers/recipes')
 const chefs = require('./app/controllers/chefs')
 
 
 routes.get("/", function(req, res){
 
-    let recipesFiltered = []
+    // let recipesFiltered = []
 
-    for( let i = 0; i < 2; i++){
-        recipesFiltered.push(data.recipes[i])
-    }
+    // for( let i = 0; i < 2; i++){
+    //     recipesFiltered.push(data.recipes[i])
+    // }
     
-    return res.render("home", {items: recipesFiltered})
+    return res.render("home")
 })
 
 routes.get("/about", function(req, res) {
-    return res.render("about", {items: data})
+    return res.render("about")
 })
 
 routes.get("/recipes", function(req, res){
 
-    let recipesFiltered = []
+    // let recipesFiltered = []
 
-    const all = data.recipes.length
+    // const all = data.recipes.length
 
-    for( let i = 0; i < all; i++){
-        const obj = data.recipes[i]
-        obj.index = i
-        recipesFiltered.push(obj)
-    }
+    // for( let i = 0; i < all; i++){
+    //     const obj = data.recipes[i]
+    //     obj.index = i
+    //     recipesFiltered.push(obj)
+    // }
 
-    return res.render("recipes", {items: recipesFiltered})
+    return res.render("recipes")
 })
 
 routes.get("/recipes/:index", function (req, res) {
@@ -49,8 +47,8 @@ routes.get("/recipes/:index", function (req, res) {
 
 routes.get("/admin/recipes", recipes.index)
 routes.get("/admin/recipes/create", recipes.create)
-routes.get("/admin/recipes/:index", recipes.show)
-routes.get("/admin/recipes/:index/edit", recipes.edit)
+routes.get("/admin/recipes/:id", recipes.show)
+routes.get("/admin/recipes/:id/edit", recipes.edit)
 
 routes.post("/admin/recipes", recipes.post)
 routes.put("/admin/recipes", recipes.put)

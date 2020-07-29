@@ -498,14 +498,19 @@ h4{
 }
 
 input,
-textarea{
+textarea, select{
     border: 1px solid #DDDDDD;
     width: 100%;
     padding: 10px;
     border-radius: 4px;
     max-width: 918px;
     margin-top: 10px;
+    outline: none;
+}
 
+select {
+    background: #FFFFFF;
+    max-width: 938px;
 }
 
 input[name="preingredients"],

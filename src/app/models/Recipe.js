@@ -23,7 +23,7 @@ module.exports = {
                 ingredients,
                 preparations,
                 information,
-                created_at 
+                created_at
             ) VALUES ($1, $2, $3, $4, $5, $6, $7)
             RETURNING id
         `
@@ -78,7 +78,7 @@ module.exports = {
             data.ingredients,
             data.preparations,
             data.information,
-            data .id
+            data.id
         ]
 
         db.query(query, values, function (err, results) {
@@ -95,6 +95,15 @@ module.exports = {
                 if(err) throw `Database error ${err}`
 
                 return callback()
+            })
+    },
+    chefSelectOptions(callback) {
+        db.query(`
+            SELECT name, id
+            FROM chefs`, function (err, results) {
+                if (err) throw `Database Error ${err}`
+
+                callback(results.rows)
             })
     }
 }

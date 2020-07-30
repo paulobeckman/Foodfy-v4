@@ -3,6 +3,7 @@ const routes = express.Router()
 
 const recipes = require('./app/controllers/recipes')
 const chefs = require('./app/controllers/chefs')
+const chefsHome = require('./app/controllers/chefsHome')
 
 
 routes.get("/", function(req, res){
@@ -44,6 +45,8 @@ routes.get("/recipes/:index", function (req, res) {
 
     return res.render("recipe", {item: recipe})
 })
+
+routes.get("/chefs", chefsHome.index)
 
 routes.get("/admin/recipes", recipes.index)
 routes.get("/admin/recipes/create", recipes.create)

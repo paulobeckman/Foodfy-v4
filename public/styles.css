@@ -426,7 +426,8 @@ h4{
     color: #111111;
 }
 
-.cards-recipes .cards p{
+.cards-recipes .cards p,
+.total_recipes-chef{
     margin-bottom: 30px;
     font-weight: regular;
     font-size: 14px;
@@ -594,5 +595,10 @@ input[name="preparations_mode"]{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.total_recipes-chef {
+    margin-left: 20px;
+    margin-top: 5px;
 }
 

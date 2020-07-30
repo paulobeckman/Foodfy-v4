@@ -6,19 +6,19 @@
 
     <div class="title-page">
         <section>
-            <h1>Chef: {{chef[0].name}}</h1>
+            <h1>Chef: {{chef.name}}</h1>
         </section>
         <section>
-            <a href=/admin/chefs/{{chef[0].id}}/edit>Editar chef</a>
+            <a href=/admin/chefs/{{chef.id}}/edit>Editar chef</a>
         </section>
     </div>
 
     <div class="avatar-chef">
-        <img src="{{chef[0].avatar_url}}" alt="{{chef.name}}">
+        <img src="{{chef.avatar_url}}" alt="{{chef.name}}">
     </div>
     <div class="name-information">
-        <h1>{{chef[0].name}}</h1>
-        <p>{{chef[0].total_recipes}} receitas</p>
+        <h1>{{chef.name}}</h1>
+        <p>{{chef.total_recipes}} receitas</p>
 
     </div>
  
@@ -27,17 +27,17 @@
     </div>
 
     <section class="cards">
-        {% for recipes in chef %}
+        {% for recipe in recipes %}
             <div class="card">
                 <section>
                     <div class="card_image-container">
-                        <img src="{{recipes.recipes_image}}" alt="burger" class="card_image">
+                        <img src="{{recipe.recipes_image}}" alt="burger" class="card_image">
                     </div>
                 </section>
                 
                 <section>
-                    <a>{{recipes.recipes_title}}</a>
-                    <p>{{recipes.name}}</p>
+                    <a>{{recipe.recipes_title}}</a>
+                    <p>{{recipe.name}}</p>
                     <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
                 </section>
             </div>

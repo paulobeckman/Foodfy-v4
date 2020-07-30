@@ -34,21 +34,20 @@ module.exports = {
     },
     find(id, callback) {
         db.query (`
-            SELECT * 
-            FROM chefs
-            WHERE chefs.id = $1`, [id], function (err, results) {
+        SELECT chefs.*, count(recipes) AS total_recipes
+        FROM chefs
+        LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
+        WHERE chefs.id = $1
+        GROUP BY chefs.id`, [id], function (err, results) {
                 if(err) throw `Database error ${err}`
 
                 callback(results.rows[0])
             }
         )
     },
-    findAllRecipes(id, callback) {
+    findRecipesChef(id, callback) {
         db.query (`
-        SELECT chefs.*, recipes.title AS recipes_title, recipes.image AS recipes_image,
-            (SELECT COUNT (recipes.title) 
-            FROM recipes
-            WHERE recipes.chef_id = chefs.id ) AS total_recipes
+        SELECT chefs.*, recipes.title AS recipes_title, recipes.image AS recipes_image
         FROM chefs
         LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
         WHERE chefs.id = $1`, [id], function (err, results) {

@@ -31,6 +31,10 @@ footer{
     
 }
 
+button {
+    cursor: pointer;
+}
+
 a{
     text-decoration: none;
 }
@@ -105,6 +109,23 @@ a{
 
     margin-top: 50px;
     margin-bottom: 20px;
+}
+
+/* filter */
+.container.header-home header{
+    display: grid;
+    grid-template-columns: 1fr 400px;
+}
+
+.filter_recipes input,
+.filter_recipes button{
+    position: relative;
+    outline: none;
+}
+
+.container.header-home input{
+    max-width: 246px;
+    margin-top: 0;
 }
 
 
@@ -469,7 +490,8 @@ h4{
 
 .container .title-page button,
 .container #form-delete button,
-.container .title-page a{
+.container .title-page a,
+.filter_search{
     padding: 9px 20px;
     background: #6558C3;
     color: white;
@@ -483,6 +505,13 @@ h4{
 .container #form-delete button{
     transform: translateX(-160px);
     background-color: lightcoral;
+}
+
+/* chefs */
+.chefsAdm h1{
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 24px
 }
 
 
@@ -600,5 +629,12 @@ input[name="preparations_mode"]{
 .total_recipes-chef {
     margin-left: 20px;
     margin-top: 5px;
+}
+
+.search_title h1 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #111111;
+    margin-bottom: 20px;
 }
 

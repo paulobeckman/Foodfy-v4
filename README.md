@@ -52,7 +52,7 @@ Projeto desenvolvido como desafio no curso **LaunchBase** oferecida pela [Rocket
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
 	
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/foodfy3.gif" width="800px">
+  <img alt="Foodfy" title="#foodfy" src="./github-assets/foodfy4.gif" width="800px">
 
   <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina1.png" width="400px">
 

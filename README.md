@@ -49,6 +49,9 @@ Na aba receitas, na rota de visualizações, apresenta vários cards de receitas
 
 Na aba chefs, na rota de visualizações, apresenta vários cards de chefs cadastrados e a quantidade de recitas que ele possui.
 
+O sistema armazena todas as informações no banco de dados postgresSQL.
+
+Também o site conta, na sua página home, com um sistema de filtro por nome da receita. E nome ou email no caso do aluno.
 
 Projeto desenvolvido como desafio no curso **LaunchBase** oferecida pela [Rocketseat][rs].
 
@@ -101,7 +104,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ## 🚀 Como rodar este projeto
 
 Podemos considerar este projeto como sendo divido em duas partes:
-1. Back End (arquivos server.js, data.json, routes.js e pasta public o arquivo script.js) 
+1. Back End (dentro da arquivos server.js, routes.js e pasta public o arquivo script.js) 
 2. Front End (pasta views, pasta public o arquivo styles.css)
 
 💡Ao iniciar tanto o front end quanto o back end iniciarão automaticamente. 

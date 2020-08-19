@@ -30,20 +30,27 @@
 
 ## 💻 Sobre o projeto
 
-🍛 Foodfy é um site que nesse projeto está na versão 3. Nesse site o chefe pode cadastrar, editar, visualizar e deletar a sua receita pela pagina admin. Essa receita cadastrada também será visualizada na página de receitas onde todos todos podem somente visualizar.
+🍛 Foodfy é um site que nesse projeto está na versão 4. Nesse site o chef pode cadastrar, visualizar, editar e deletar seu perfil pela pagina admin. Além disso, o chefe pode cadastrar, editar, visualizar e deletar a sua receita, também pela pagina admin. Com isso, seja o chef, seja a receia, uma vez cadastrados podem ser visualizados na página de receitas onde todos todos podem somente visualizar.
+Ao deletar o chef, se o mesmo possuir pelo menos uma receita, é retornado uma mensagem de erro informando que o chef possui receitas e por isso não pode ser deletado. 
 
-- Os items que podem ser cadastrados são: 
-  - Uma url da imagem da receita;
-  - O título da receita;
-  - O autor da receita; 
-  - Ingredientes;
-  - Modo de preparo;
-  - Mais informações.
+- Para criar um chef é necessário cadastrar os seguintes items:
+  - nome do chef
+  - url de imagem do chef
+  
+- Para criar uma receita é necessário cadastrar os seguintes items: 
+  - uma url da imagem da receita;
+  - o título da receita;
+  - selecionar o nome do chef
+  - ingredientes;
+  - modo de preparo;
+  - mais informações.
 
-Na aba receitas apresenta vários cards de receitas que ao serem clicados, o usuário irá ser direcionado para uma página onde encontrado mais detalhes daquela receita como o Ingredientes, Modo de preparo e Informações adicionais, cada tópico desse conta com um botão que permite o usuário esconter ou mostrar o conteudo do tópico.
+Na aba receitas, na rota de visualizações, apresenta vários cards de receitas que ao serem clicados, o usuário irá ser direcionado para uma página onde encontrado mais detalhes daquela receita como o Ingredientes, Modo de preparo e Informações adicionais, cada tópico desse, conta com um botão que permite o usuário esconter ou mostrar o conteúdo do tópico.
+
+Na aba chefs, na rota de visualizações, apresenta vários cards de chefs cadastrados e a quantidade de recitas que ele possui.
 
 
-Projeto desenvolvido como desafio no curso **LaunchBase** oferecida pela [Rocketseat](rs).
+Projeto desenvolvido como desafio no curso **LaunchBase** oferecida pela [Rocketseat][rs].
 
 "O [LaunchBase](lb) é um treinamento no formato de bootcamp online que tem duração de 8 semanas. A cada semana os conteúdos são liberados de acordo com um cronograma, guiando o aluno pelas ferramentas e conceitos mais modernos de desenvolvimento que permitirão construir as melhores aplicações e ter acesso às melhores oportunidades como programador." - Rocketseat
 
@@ -84,11 +91,11 @@ Projeto desenvolvido como desafio no curso **LaunchBase** oferecida pela [Rocket
 As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Node.js][nodejs]
-- [Java Script][js]
+- [JavaScript][js]
 - [CSS][CSS]
 - [HTML][HTML]
 - [Nunjucks][Nunjucks]
-- [Unsplash Source][API]
+- [PostgreSQL][PSQL]
 
 
 ## 🚀 Como rodar este projeto
@@ -120,7 +127,7 @@ $ npm install
 # Execute a aplicação em modo de desenvolvimento
 $ npm start
 
-# O servidor inciará na porta:3000 - acesse http://localhost:3000
+# O servidor inciará na porta:5000 - acesse http://localhost:5000
 ```
 
 
@@ -139,4 +146,5 @@ Feito por Paulo Beckman 👋🏽 [Entre em contato!](https://www.linkedin.com/in
 [CSS]: https://developer.mozilla.org/pt-BR/docs/Web/CSS
 [HTML]: https://developer.mozilla.org/pt-BR/docs/Web/HTML
 [Nunjucks]: https://www.npmjs.com/package/nunjucks
-[API]: https://source.unsplash.com/
+[PSQL]: https://www.postgresql.org/
+

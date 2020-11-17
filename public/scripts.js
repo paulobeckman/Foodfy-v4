@@ -1,5 +1,4 @@
 const cards = document.querySelectorAll('.card')
-
 for (let card of cards) {
     card.addEventListener("click", function(){
         const Id = card.getAttribute("id")
@@ -7,9 +6,7 @@ for (let card of cards) {
     })
 }
 
-
 const showHides = document.querySelectorAll('h4')
-
 for (let showHide of showHides){
 
     // let selector = document.querySelector('.topic-content').classList.toggle('hide')
@@ -63,12 +60,9 @@ function addIngredient(){
     newField.children[0].value = "";
     ingredients.appendChild(newField);
 }
-
 document
     .querySelector(".add-ingredient")
     .addEventListener("click", addIngredient)
-
-
 
 function addPreparetion(){
     const preparetion = document.querySelector("#preparations_mode")
@@ -84,15 +78,9 @@ function addPreparetion(){
     newField.children[0].value = "";
     preparetion.appendChild(newField);
 }
-
 document
     .querySelector(".add-preparations_mode")
     .addEventListener("click", addPreparetion)
-
-
-
-
-
 
 
 

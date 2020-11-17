@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "lodash.update": "^4.10.2",
     "method-override": "^3.0.0",
+    "multer": "^1.4.2",
     "nunjucks": "^3.2.1",
     "pg": "^8.3.0"
   },

@@ -1,4 +1,6 @@
 const Recipe = require('../models/Recipe')
+const File = require('../models/Files')
+const Recipe_File = require(`../models/Recipe_Files`)
 
 module.exports = {
     index(req, res){
@@ -13,7 +15,7 @@ module.exports = {
         })
 
     },
-    post(req, res) {
+    async post(req, res) {
         const keys = Object.keys(req.body)
 
         for(key of keys){
@@ -21,10 +23,26 @@ module.exports = {
                 return res.send('Please, fill all fields!')
             }
         }
+
+        if(req.files.length == 0){
+            return res.send('Please, send at least one image')
+        }
         
-        Recipe.create(req.body, function (recipe) { 
-            return res.redirect(`recipes/${recipe.id}`)
+        let results = await Recipe.create(req.body)
+        const recipeId = results.rows[0].id
+
+        const filesPromise = req.files.map(file => File.create(file))
+        const fileResults = await Promise.all(filesPromise)
+        
+        const filesPromiseResults = fileResults.map(file => {
+            const  fileId = file.rows[0].id
+
+            Recipe_File.create({recipe_id: recipeId, file_id: fileId})
         })
+
+        await Promise.all(filesPromiseResults)
+
+        return res.redirect(`recipes/${recipeId}`)
     },
     show(req, res){
         Recipe.find(req.params.id, function (recipe) {

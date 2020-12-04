@@ -641,7 +641,10 @@ input[name="preparations_mode"]{
 }
 
 /* PHOTOS UPLOAD*/
-
+form .itemPhotos .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 
 form .itemPhotos #photos-upload {
     position: relative;
@@ -686,10 +689,9 @@ form .itemPhotos #photos-input {
 form .itemPhotos #photos-preview {
     position: absolute;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 149px);
     grid-gap: 8px;
-    width: 100%;
-    margin: 8px 0;
+    right: 0;
 }
 
 form .itemPhotos #photos-preview img{

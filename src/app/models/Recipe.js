@@ -40,17 +40,12 @@ module.exports = {
 
     },
 
-    find(id, callback) {
-        db.query (`
+    find(id) {
+        return db.query (`
             SELECT recipes.*, chefs.name AS chef_name 
             FROM recipes 
             LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-            WHERE recipes.id = $1`, [id], function (err, results) {
-                if(err) `Database error ${err}`
-
-                callback(results.rows[0])
-            }
-        )
+            WHERE recipes.id = $1`, [id])
     },
     
     update(data, callback) {
@@ -92,14 +87,10 @@ module.exports = {
             })
     },
 
-    chefSelectOptions(callback) {
-        db.query(`
+    chefSelectOptions() {
+        return db.query(`
             SELECT name, id
-            FROM chefs`, function (err, results) {
-                if (err) throw `Database Error ${err}`
-
-                callback(results.rows)
-            })
+            FROM chefs`)
     },
 
     findBy(filter, callback){
@@ -113,5 +104,13 @@ module.exports = {
 
                     callback(results.rows)
         })
+    },
+
+    file(id){
+        return db.query(`
+                SELECT * 
+                FROM recipe_files 
+                LEFT JOIN files ON (files.id = recipe_files.file_id)
+                WHERE recipe_id = $1`, [id])
     }
 }

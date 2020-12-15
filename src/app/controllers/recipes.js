@@ -8,12 +8,13 @@ module.exports = {
             return res.render("admin/recipes/index", {recipes})
         })
     },
-    create(req, res) {
-        Recipe.chefSelectOptions(function (options) {
-            return res.render("admin/recipes/create", {chefOptions: options})
-            
-        })
+    async create(req, res) {
 
+        let results = await Recipe.chefSelectOptions()
+        const options = results.rows
+
+        return res.render("admin/recipes/create", {chefOptions: options})
+        
     },
     async post(req, res) {
         const keys = Object.keys(req.body)
@@ -44,23 +45,33 @@ module.exports = {
 
         return res.redirect(`recipes/${recipeId}`)
     },
-    show(req, res){
-        Recipe.find(req.params.id, function (recipe) {
-            if(!recipe) return res.send("Recipe not found!")
-    
-            return res.render("admin/recipes/show", {recipe})
-        })
+    async show(req, res){
+
+        let results = await Recipe.find(req.params.id)
+        const recipe = results.rows[0]
+
+        if(!recipe) return res.send("Recipe not found!")
+
+        return res.render("admin/recipes/show", {recipe})
     },
-    edit(req, res){
-        Recipe.find(req.params.id, function (recipe) {
-            if(!recipe) return res.send("Chef not found")
+    async edit(req, res){
+        let results = await Recipe.find(req.params.id)
+        const recipe = results.rows[0]
 
-            Recipe.chefSelectOptions(function (options) {
-                return res.render("admin/recipes/edit", {recipe, chefOptions: options})
+        if(!recipe) return res.send("Chef not found")
 
-            })
+        results = await Recipe.chefSelectOptions()
+        const options = results.rows
 
-        })
+        results = await Recipe.file(recipe.id)
+        let files = await results.rows
+
+        files = files.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        return res.render("admin/recipes/edit", {recipe, chefOptions: options, files})
     },
     put(req, res){
         const keys = Object.keys(req.body)

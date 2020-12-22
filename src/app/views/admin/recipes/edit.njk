@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container page-create">
-    <form id="form-delete" action="/admin/recipes?_method=DELETE" method="POST" enctype="multipart/form-data">
+    <form id="form-delete" action="/admin/recipes?_method=DELETE" method="POST">
         <input 
             type="hidden"
             name="id"
@@ -12,7 +12,7 @@
         <button type="submit">Deletar</button>
     </form>
 
-    <form method = "POST" action = "/admin/recipes?_method=PUT">
+    <form method ="POST" action ="/admin/recipes?_method=PUT" enctype="multipart/form-data">
 
         <div class="title-page">
             <section>
@@ -31,8 +31,12 @@
             value="{{recipe.id}}"
         >
 
+        <input 
+            type="hidden"
+            name="id"
+            value="{{file.id}}"
+        >
     </form>
-
     {% include 'formDelete.njk'%}
 
 </div>

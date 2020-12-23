@@ -1,6 +1,5 @@
 const db = require('../../config/db')
 const fs = require('fs')
-const { deleteByPlaylist } = require('./Recipe_Files')
 
 module.exports = {
     create(data){
@@ -28,8 +27,7 @@ module.exports = {
 
             return db.query(`
                 DELETE
-                FROM files WHERE id = $1`, [id]
-            )
+                FROM files WHERE id = $1`, [id])
 
         } catch(err) {
             console.error(err)

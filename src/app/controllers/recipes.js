@@ -73,6 +73,9 @@ module.exports = {
         return res.render("admin/recipes/edit", {recipe, chefOptions: options, files})
     },
     async put(req, res){
+        console.log(req.body)
+        console.log("////////////////")
+
         const keys = Object.keys(req.body)
 
         for(key of keys){
@@ -82,6 +85,8 @@ module.exports = {
         }
 
         const recipeId = req.body.id
+        console.log("req.body.id")
+        
 
         if(req.files.length != 0) {
             const newFilesPromise = req.files.map(file => 
@@ -95,6 +100,8 @@ module.exports = {
                 Recipe_File.create({recipe_id: recipeId, file_id: fileId})
             })
 
+            console.log("req.files.length")
+
             await Promise.all(filesPromiseResults)
         }
 
@@ -104,14 +111,19 @@ module.exports = {
             const lastIndex = removedFiles.length - 1
             removedFiles.splice(lastIndex, 1)
 
-            removedFiles.map(id=> Recipe_File.deleteByFile(id))
+            console.log(removedFiles)
+
+            await removedFiles.map(id=> Recipe_File.deleteByFile(id))
 
             const removedFilesPromise = await removedFiles.map(id => File.delete(id))
 
+            console.log("req.body.removed_files")
             await Promise.all(removedFilesPromise)
         }
 
-        await Recipe.update(req.body)
+        await Recipe.update(req.body.id)
+        console.log(req.body)
+
         
         return res.redirect(`/admin/recipes/${req.body.id}`)
 
@@ -119,12 +131,11 @@ module.exports = {
     async delete(req, res){
         const RecipeId = req.body.id
 
-        await Recipe_File.deleteByRecipe(RecipeId)
-        await Recipe.delete(RecipeId)
-        
         const resultsFileId = await Recipe_File.find(RecipeId)
-        const removedFilesPromise = await resultsFileId.rows.map(recipe => File.delete(recipe.recipe_id))
-        console.log("oi")
+        await Recipe_File.deleteByRecipe(RecipeId)
+        await Recipe.delete(RecipeId)  
+        
+        const removedFilesPromise = await resultsFileId.rows.map(files => File.delete(files.file_id))
         await Promise.all(removedFilesPromise)
         
         return res.redirect("recipes")  

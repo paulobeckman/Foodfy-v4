@@ -18,7 +18,20 @@
             </div>
 
             <div class="image_recipe-container">
-                <img src="{{recipe.image}}" alt="{{recipe.title}}">
+                <img src="{{files[0].src}}" alt="{{files[0].image.name}}">
+            </div>
+
+            <div class="gallery-preview">
+                {% for image in files %}
+                    <img 
+                        src="{{image.src}}" 
+                        alt="{{image.name}}"
+                        {% if loop.index0 == 0 %}
+                            class="active"
+                        {% endif %}
+                        onclick="ImageGallery.setImage(event)"
+                    >
+                {% endfor %}
             </div>
             
             <div class="title_author">

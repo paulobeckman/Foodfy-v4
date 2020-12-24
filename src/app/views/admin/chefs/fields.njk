@@ -9,14 +9,33 @@
     </div>
 </div>
 
-<div class="item">
+<div class="itemPhotos chef">
     <div>Avatar</div>
-    <div>
-        <input 
-            type="text"
-            name="avatar_url"
-            placeholder="http://"
-            value="{{chef.avatar_url}}"
-        >
+    <div class="grid">
+        <div id="photos-upload">
+            <input 
+                id="photos-input"
+                type="file"
+                name="photos"
+                accept="image/*"
+                onchange="PhotosUpload.handleFileInput(event)"
+            >
+
+            <p>Enviar Avatar</p>
+        </div>
+
+        <div id="photos-preview">
+            {% if files %}
+                {% for image in files %}
+                    <div class="photo" id="{{image.id}}">
+                        <img src="{{image.src}}" alt="{{image.name}}">
+                        <i class="material-icons"
+                            onclick="PhotosUpload.removeOldPhoto(event)"
+                        >close</i>
+                    </div>
+                {% endfor %}
+                <input type="hidden" name="removed_files">
+            {% endif %}
+        </div>
     </div>
 </div>

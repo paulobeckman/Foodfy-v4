@@ -757,3 +757,67 @@ form .itemPhotos.chef input#photos-input {
     width: 100%;
     
 }
+
+
+/* PRODUCT VIEW */
+/* .recipe-single.container {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
+
+    padding: 32px 24px;
+    margin: 32px auto;
+
+    box-shadow: 2px 2px 2px -4px rgba(63,63,63,.5);
+
+    border: 1px solid #efefef;
+    border-radius: 4px;
+} */
+
+.recipe-single.container .image_recipe-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.recipe-single.container .image_recipe-container img {
+    height: 280px;
+    width: 100%;
+
+    object-fit: cover;
+
+}
+
+/* product single gallery */
+.recipe-single.container .gallery-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-gap: 2px;
+}
+
+.recipe-single.container div.gallery-preview {
+    float: right;
+}
+
+.recipe-single.container .gallery-preview img {
+    height: 50px;
+    width: 50px;
+
+    border-radius: 3.5px;
+
+
+    object-fit: cover;
+
+    opacity: 0.6;
+
+    cursor: pointer;
+
+    transition: 200ms;
+}
+
+.recipe-single.container .gallery-preview img:hover,
+.recipe-single.container .gallery-preview img.active {
+    opacity: 1;
+}

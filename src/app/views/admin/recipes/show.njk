@@ -6,76 +6,74 @@
 
 {% block content %}
 
-    <div class="container">
-        
-            <div class="title-page">
-                <section>
-                    <h1>Receita: {{recipe.title}}</h1>
-                </section>
-                <section>
-                    <a href="/admin/recipes/{{recipe.id}}/edit">Editar Receita</a>
-                </section>
-            </div>
+    <div class=" recipe-single container">
+        <div class="title-page">
+            <section>
+                <h1>Receita: {{recipe.title}}</h1>
+            </section>
+            <section>
+                <a href="/admin/recipes/{{recipe.id}}/edit">Editar Receita</a>
+            </section>
+        </div>
 
-            <div class="image_recipe-container">
-                <img src="{{files[0].src}}" alt="{{files[0].image.name}}">
-            </div>
-
-            <div class="gallery-preview">
-                {% for image in files %}
-                    <img 
-                        src="{{image.src}}" 
-                        alt="{{image.name}}"
-                        {% if loop.index0 == 0 %}
-                            class="active"
-                        {% endif %}
-                        onclick="ImageGallery.setImage(event)"
-                    >
-                {% endfor %}
-            </div>
-            
-            <div class="title_author">
-                <h1>{{recipe.title}}</h1>
-                <p>por {{recipe.chef_name}}</p>
-            </div> 
-
-            <div class="ingredients">
-                <section class="topic_button" id="ingredients">
-                    <h1>Ingredientes</h1>
-                </section>
-                <div class="topic_content_ingredients">
-                    <ul id ="content">
-                    {%for ingredient in recipe.ingredients%}
-                        <li>{{ingredient}}</li>
-                    {% endfor %}
-                    </ul>
-                </div>
-            </div>
-
-            <div class="preparation">
-                <section class="topic_button" id="preparation">
-                    <h1>Modo de preparo</h1>
-                </section>
-                <div class="topic_content_preparation">
-                    <ul id ="content">
-                    {%for preparation in recipe.preparations%}
-                        <li>{{preparation}}</li>
-                    {% endfor %}
-                    </ul>
-                </div>
-            </div>
-
-            <div class="information">
-                <section class="topic_button" id="information">
-                    <h1>Informações adicionais</h1>
-                </section>
-                <div class="topic_content_information">
-                    <p>{{recipe.information}}</p>
-                </div>
-            </div>
-
+        <div class="image_recipe-container">
+            <img src="{{files[0].src}}" alt="{{files[0].image.name}}">
+        </div>
+    <div class="galery">
+        <div class="gallery-preview">
+            {% for image in files %}
+                <img 
+                    src="{{image.src}}" 
+                    alt="{{image.name}}"
+                    {% if loop.index0 == 0 %}
+                        class="active"
+                    {% endif %}
+                    onclick="ImageGallery.setImage(event)"
+                >
+            {% endfor %}
+        </div>
     </div>
-    
-    <script src="/scripts.js"></script>
+        
+        <div class="title_author">
+            <h1>{{recipe.title}}</h1>
+            <p>por {{recipe.chef_name}}</p>
+        </div> 
 
+        <div class="ingredients">
+            <section class="topic_button" id="ingredients">
+                <h1>Ingredientes</h1>
+            </section>
+            <div class="topic_content_ingredients">
+                <ul id ="content">
+                {%for ingredient in recipe.ingredients%}
+                    <li>{{ingredient}}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="preparation">
+            <section class="topic_button" id="preparation">
+                <h1>Modo de preparo</h1>
+            </section>
+            <div class="topic_content_preparation">
+                <ul id ="content">
+                {%for preparation in recipe.preparations%}
+                    <li>{{preparation}}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="information">
+            <section class="topic_button" id="information">
+                <h1>Informações adicionais</h1>
+            </section>
+            <div class="topic_content_information">
+                <p>{{recipe.information}}</p>
+            </div>
+        </div>
+    </div>
+       <script src="/scripts.js"></script>
+    
 {% endblock %}

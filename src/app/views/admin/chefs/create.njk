@@ -4,7 +4,7 @@
 
 <div class="container">
 
-    <form method="POST" action="/admin/chefs">
+    <form method="POST" action="/admin/chefs" enctype="multipart/form-data">
 
         <div class="title-page">
             <section>
@@ -18,9 +18,7 @@
         {%include 'admin/chefs/fields.njk'%}
 
     </form>
-
-    <div class="scpace"></div>
-
+    
 </div>
 
 {% endblock %}

@@ -3,13 +3,13 @@
 </h1>
  
 <h4 align="center"> 
-	🚀 Desafio Principal - Foodfy version 4 🚀
+	🚀 Desafio Principal - Foodfy-v4 version 4 🚀
 </h4>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/paulobeckman/Foodfy?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/paulobeckman/Foodfy-v4?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/paulobeckman/Foodfy">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/paulobeckman/Foodfy-v4">
 
   	
   <a href="https://www.linkedin.com/in/paulobeckman/">
@@ -17,13 +17,13 @@
   </a>
 	
   
-  <a href="https://github.com/paulobeckman/Foodfy/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/paulobeckman/Foodfy">
+  <a href="https://github.com/paulobeckman/Foodfy-v4/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/paulobeckman/Foodfy-v4">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/paulobeckman/Foodfy/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/paulobeckman/Foodfy?style=social">
+   <a href="https://github.com/paulobeckman/Foodfy-v4/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/paulobeckman/Foodfy-v4?style=social">
   </a>
 </p>
 
@@ -62,29 +62,29 @@ Projeto desenvolvido como desafio no curso **LaunchBase** oferecida pela [Rocket
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
 	
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/foodfy4.gif" width="800px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/foodfy4.gif" width="800px">
 
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina1.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina1.png" width="400px">
 
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina2.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina2.png" width="400px">
   
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina3.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina3.png" width="400px">
   
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina4.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina4.png" width="400px">
 
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina5.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina5.png" width="400px">
 
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina6.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina6.png" width="400px">
   
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina7.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina7.png" width="400px">
 
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina8.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina8.png" width="400px">
 
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina9.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina9.png" width="400px">
 
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina10.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina10.png" width="400px">
 
-  <img alt="Foodfy" title="#foodfy" src="./github-assets/pagina11.png" width="400px">
+  <img alt="Foodfy-v4" title="#foodfy" src="./github-assets/pagina11.png" width="400px">
 
 
 </p>
@@ -119,10 +119,10 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode][vsco
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/paulobeckman/Foodfy.git
+$ git clone https://github.com/paulobeckman/Foodfy-v4.git
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd Foodfy
+$ cd Foodfy-v4
 
 # Instale as dependências
 $ npm install
